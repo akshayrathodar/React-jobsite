@@ -1,0 +1,32 @@
+SignUp Type JobSeeker = 1  (sign up as jobseeker)
+SignUp Type Employer  =  2 (sign up as employer)
+-------------------------------------------------
+Sign Up i.e registration
+
+URL POST: /api/signup
+
+Request format : 
+{
+  "emailAddress": "Hitesh@param.com",
+  "signUpType": 1
+}
+
+-------------------------------------------------
+Response: 200 = OK (Check Status true or false)
+{
+"Id": 0,
+"Status": false,
+"DuplicateRecord": true,
+"ErrorMessage": "Email Address already exist.",
+"SuccessMessage": null
+}
+{
+"Id": 9,
+"Status": true,
+"DuplicateRecord": false,
+"ErrorMessage": "",
+"SuccessMessage": "SignUp Done Succcessfully. Please check email for account activation details."
+}
+
+Response : 400 = BadRequest (invalid data)
+Conflict : 409 = Unhandled exception
